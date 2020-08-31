@@ -1,0 +1,63 @@
+#include <stdio.h>
+struct customer
+{
+	int account;
+	char name[200];
+	int balance;
+}c[200];
+void below();
+void withdrawl(int amount,int code);
+int main()
+{
+	struct customer c[200]={
+	1,"anusha",99,
+	2, "anfaal",1001,
+	3,"sharjeel",120,
+	4,"hadiqa",82,
+	5,"ahsan",1200,
+};
+int main()
+{
+
+	int account,code,amount;
+	printf("enter account no\n");
+	scanf("%d",&account);
+	printf("enter ammount tobe withdrawled\n");
+	scanf("%d",&amount);
+	printf("enter code 0 or 1\n");
+	scanf("%d",&code);		
+	below();
+	withdrawl(account,code);
+	
+}
+void withdrawl(int amount,int code)
+{
+	int deposit,i;
+	for(i=0; i<200; i++){
+	if(code==1){
+		if(c[i].balance-amount<=100){
+			printf("\ninsufficient\n");
+		}else{
+			c[i].balance-=amount;
+			printf("remaining amount=%d",c[i].balance);
+		}
+	}else
+	if(code==0){
+		printf("enter amount to deposit");
+		scanf("%d",&deposit);
+		c[i].balance+=deposit;
+	}
+}
+}
+void below()
+{
+	int i;
+	printf("Balance below 100");
+	for(i=0; i<200; i++){
+	if(c[i].balance>100 && c[i].balance<0){
+		printf("NAME:%c",c[i].name);
+		printf("ACOUNT NO=%d",c[i].account);
+		return;
+	}
+}
+}
