@@ -1,0 +1,2 @@
+post:AB+CD*+EF/G*H*-
+prefix: -++AB*CD**/EFGH
